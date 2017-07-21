@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  p Sign up to #{title}
+  div.
+    <form action="/signup" method="post">
+        <div>
+            <label>Username:</label>
+            <input type="text" name="username"/>
+        </div>
+        <div>
+            <label>nickname:</label>
+            <input type="text" name="nickname"/>
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" name="password"/>
+        </div>
+        <div>
+            <input type="submit" value="Signup"/>
+        </div>
+    </form>
