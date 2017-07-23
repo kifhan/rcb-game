@@ -27,7 +27,7 @@ router.get('/logout', function (req, res) {
 });
 
 module.exports.index = router;
-module.exports.users = require('./users')
-module.exports.accounts = require('./accounts')
-module.exports.transactions = require('./transactions')
-module.exports.rest = require('./rest')
+// module.exports.users = require('./users')
+// module.exports.accounts = require('./accounts')
+// module.exports.transactions = require('./transactions')
+// module.exports.rest = require('./rest')

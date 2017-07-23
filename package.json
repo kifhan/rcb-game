@@ -4,7 +4,10 @@
   "description": "Simple Game that use Rellat Centrall Bank ",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www",
+    "build": "browserify src/index.js -s RcbGame -o public/javascripts/rcbgame.js",
+    "watch": "watchify src/index.js -s RcbGame -o public/javascripts/rcbgame.js"    
   },
   "repository": {
     "type": "git",
@@ -27,11 +30,13 @@
     "jade": "~1.11.0",
     "mongoose": "^4.10.5",
     "morgan": "~1.8.1",
+    "p5": "^0.5.11",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.0.0",
     "serve-favicon": "~2.4.2",
-    "socket.io": "^2.0.3"
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3"
   },
   "bugs": {
     "url": "https://github.com/kifhan/rcb-game/issues"

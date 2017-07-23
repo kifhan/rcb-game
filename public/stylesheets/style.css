@@ -1,8 +1,255 @@
+@import url("https://fonts.googleapis.com/css?family=Ek+Mukta:400,300,500,700,800");
+
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
   color: #00B7FF;
+}
+
+/**
+* coin flipping
+*/
+.coin {
+  font-family: 'Ek Mukta', sans-serif;
+  /* background: #fff59d; */
+
+  display: inline-block;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  -ms-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /* position: absolute;
+  top: 50%;
+  left: 50%; */
+  animation: coin .8s linear infinite;
+}
+.coin.head {
+  animation: none;
+  transform: rotateY(0); 
+}
+.coin.tail {
+  animation: none;
+  transform: rotateY(180deg); 
+}
+.coin.hide {
+  display: none;
+}
+
+.coin .front {
+  width: 100%;
+  height: 100%;
+  
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.coin .back {
+  width: 100%;
+  height: 100%;
+  background: #f7941e;
+  border-radius: 50%;
+  transform: rotateY(180deg) translateZ(10px);
+  -webkit-transform: rotateY(180deg) translateZ(10px);
+  -ms-transform: rotateY(180deg) translateZ(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.coin .front_b {
+  width: 100%;
+  height: 100%;
+  background: #f7941e;
+  border-radius: 50%;
+  transform: translateZ(-1px);
+  -webkit-transform: translateZ(-1px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.coin .back_b {
+  width: 100%;
+  height: 100%;
+  background: #f7941e;
+  border-radius: 50%;
+  transform: translateZ(-9px);
+  -webkit-transform: translateZ(-9px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.coin:before {
+  content: "";
+  margin-left: -5px;
+  width: 10px;
+  height: 100%;
+  background: #f7941e;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: rotateY(-90deg);
+  -webkit-transform-origin: 100% 50%;
+  transform: rotateY(-90deg);
+  transform-origin: 100% 50%;
+}
+
+.coin .front_b:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 10px solid #fbb041;
+  border-radius: 50%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.coin .front_b:after {
+  content: "$";
+  padding: 12px 0 0 0;
+  width: 100%;
+  height: 100%;
+  font-size: 5em;
+  font-weight: bold;
+  color: #fbb041;
+  line-height: 1;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;  
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.coin .back:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 10px solid #fbb041;
+  border-radius: 50%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
+}
+
+.coin .back:after {
+  content: "10";
+  padding: 27px 0 0 0;
+  width: 100%;
+  height: 100%;
+  font-size: 3em;
+  font-weight: bold;
+  color: #fbb041;
+  line-height: 1;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -4;
+}
+
+@keyframes coin {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+
+/*
+* Bet button setting
+*/
+.play input.bet_button {
+	display: none;
+}
+.play label {
+  font-size: 21px;
+	border-radius: .25em;
+	cursor: pointer;
+	display: inline-block;
+	margin-bottom: .125em;
+	padding: 1em 2em;
+  z-index: 20;
+  background-color: #27ae60;
+  border: none;
+  border-radius:5px;
+  box-shadow: 0 9px #95a5a6;
+}
+
+.play label:hover{
+  background-color: #2ecc71;
+}
+/* 
+.play label:active {
+  background-color: #2ecc71;
+  box-shadow: 0 5px #95a5a6;
+  transform: translateY(4px);
+} */
+.play input.bet_button:checked + label {
+  background-color: #2ecc71;
+  box-shadow: 0 5px #95a5a6;
+  transform: translateY(4px);
+}
+
+#bet_range {
+  width: 400px;
+  margin: 10px 0 20px 0;
+}
+
+#game_message {
+  height: 24px;
+  width: 400px;
+  text-align: center;
+  font-size: 20px;
+}
+#game_money {
+  height: 24px;
+  width: 400px;
+  text-align: right;
+  font-size: 20px;
+}
+.loan_button {
+    font-size: 21px;
+	border-radius: .25em;
+	cursor: pointer;
+  display: inline-block;
+  margin-top:10px;
+	margin-bottom: .125em;
+	padding: 1em 2em;
+  z-index: 20;
+  background-color: #ff9a00;
+  border: none;
+  border-radius:5px;
+  box-shadow: 0 9px #95a5a6;
+}
+.loan_button:hover{
+  background-color: #ffb84d;
+}
+.loan_button:active {
+  background-color: #e78b00;
+  box-shadow: 0 5px #95a5a6;
+  transform: translateY(4px);
+} 
+.loan_button.hide {
+  display: none;
 }

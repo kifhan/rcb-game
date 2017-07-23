@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Coin Flipping - RCB presents</title>
+    <!-- <script language="javascript" type="text/javascript" src="http://cdnjs.com/libraries/p5.js"></script> -->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+
+<body>
+    <h1>Welcome to Coin Toss Gamble</h1>
+    <div id='screen'>
+        <div id="prev-coin" class="coin hide">
+            <div class="front"></div>
+            <div class="front_b"></div>
+            <div class="back"></div>
+            <div class="back_b"></div>
+        </div>
+        <div class="coin">
+            <div class="front"></div>
+            <div class="front_b"></div>
+            <div class="back"></div>
+            <div class="back_b"></div>
+        </div>
+    </div>
+    <div id="game_message"></div>
+    <div id="game_money"></div>
+    <div class="play">
+        <form>
+            Bet Amount: <span id="bet_range_num"></span>%<br>
+            <input type="range" id="bet_range" value="10"><br>
+            <input type="radio" id="bet1" class="bet_button" name="bet" value="head"><label for="bet1">HEAD</label>
+            <input type="radio" id="bet2" class="bet_button" name="bet" value="tail"><label for="bet2">TAIL</label>
+            <input type="radio" id="bet3" class="bet_button" name="bet" value="giveup" checked><label for="bet3">Skip</label>
+        </form>
+    </div>
+    <div id="loan_button" class="loan_button">Loan Money</div>
+</body>
+
+<script language="javascript" type="text/javascript" src="javascripts/rcbgame.js"></script>
+<script>
+RcbGame()
+</script>
+</html>

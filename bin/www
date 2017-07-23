@@ -105,4 +105,5 @@ db.once('open', function(){
  * Socket.io Game server setting
  */
 
- var GameServer = require('../game_server')(server)
+ var GameServer = require('../game_server')
+GameServer(server)

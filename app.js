@@ -20,7 +20,7 @@ app.set('view engine', 'jade');
 // router에서 jade 사용 예: res.render('index', { title: 'Express' });
 
 // uncomment after placing your favicon in /public
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -37,10 +37,10 @@ app.use(flash());
 
 // route setting
 app.use('/', routes.index); // ./routes/index.js에 설정되어 있다. 기본 설정
-app.use('/users', routes.users); // ./routes/users.js
-app.use('/play', routes.play); // ./routes/accounts.js
-app.use('/transactions', routes.transactions); // ./routes/transactions.js
-app.use('/rest', routes.rest); // RESTful API 라우팅
+// app.use('/users', routes.users); // ./routes/users.js
+// app.use('/play', routes.play); // ./routes/accounts.js
+// app.use('/transactions', routes.transactions); // ./routes/transactions.js
+// app.use('/rest', routes.rest); // RESTful API 라우팅
 
 require('./passport_config')(passport) // Passport Local Strategy 설정 
 
